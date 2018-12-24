@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "your prefix here";
+const prefix = "og!";
 /////////////////////////
 ////////////////////////
 
@@ -313,30 +313,29 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === 'help') {
+    if (message.content === 'og!help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(general_commands) لاظهار الاوامر العامة')
+        .setDescription('**أوامر  البوت**')
+        .addField('og!play', 'لتشغيل اغنية')
+        .addField('og!join', 'دخول رومك الصوتي')
+        .addField('og!disconnect', 'الخروج من رومك الصوتي')
+        .addField('og!skip', 'تخطي الأغنية')
+        .addField('og!pause', 'ايقاف الاغنية مؤقتا')
+        .addField('og!resume', 'تكملة الاغنية')
+        .addField('og!queue', 'اظهار قائمة التشغيل')
+        .addField('og!np', 'اظهار الاغنية اللي انت مشغلها حاليا')
+        .setFooter('(og!general_commands) لاظهار الاوامر العامة')
       message.channel.send(helpEmbed);
     }
 });
 
 client.on('message', message => {
-    if (message.content === 'general_commands') {
+    if (message.content === 'og!general_commands') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
+        .addField('og!avatar', "افاتار الشخص المطلوب")
+        .addField('og!ping', 'معرفة ping البوت')
         .setFooter('المزيد قريبا ان شاء الله!')
       message.channel.send(helpEmbed);
     }
@@ -349,7 +348,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : CF Na World Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Toxic Codes Team`,"http://twitch.tv/Toxic Codes")
+client.user.setGame(`og!help | Only Server`,"http://twitch.tv/abdoufersaoui_Dz")
 client.user.setStatus("dnd")
 });
 
